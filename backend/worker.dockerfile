@@ -1,6 +1,6 @@
 FROM python:3.9
-WORKDIR code/workers
-COPY ./requirements.txt /code/workers/requirements.txt
-RUN pip install --no-cache-dir --upgrade -r /code/workers/requirements.txt
-COPY . /code/workers
-CMD ["celery", "-A", "worker", "worker", "--loglevel=INFO"]
+WORKDIR code
+COPY . /code
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+CMD ["celery", "-A", "backend.worker", "worker", "-E", "--loglevel=INFO"]
+#ENTRYPOINT ["tail", "-f", "/dev/null"]
