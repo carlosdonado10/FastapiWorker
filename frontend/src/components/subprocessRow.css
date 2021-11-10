@@ -1,0 +1,17 @@
+.processRowWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ProcessRow {
+    margin-bottom: 10px;
+}
+
+.subProcessRowTitle {
+    flex-basis: 50%;
+    text-align: left;
+}
+
+.subProcessRowAction {
+    flex-basis: 50%;
+}

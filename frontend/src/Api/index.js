@@ -1,7 +1,13 @@
 import {create} from 'apisauce'
 
 const api = create({
-    baseUrl: process.env.API_PATH
+    baseURL: 'http://localhost:8080'
 })
 
-api.post('/')
+let getApiWithEndpoints = (api) => ({
+        createProcess: (process) => api.post('/create_process', process),
+        getProcessList: () => api.get('/process/list'),
+        getProgress: (processId) => api.get(`/status/${processId}`),
+})
+
+export default getApiWithEndpoints(api)

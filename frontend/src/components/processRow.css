@@ -1,0 +1,8 @@
+.processRowWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ProcessRow {
+    margin-bottom: 10px;
+}
